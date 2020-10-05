@@ -1,0 +1,6 @@
+<p>directivespractice works!</p>
+<hr>
+<div [ngStyle]="{'background-color' : 'red'}">ngStyle 1</div>
+<div [ngStyle]="{'background-color' : getColor()}">ngStyle 2</div>
+<div [style.backgroundColor]="getColor()">NgStyle 3</div>
+<div [ngStyle]="getColorObj()">ngStyle 4</div>

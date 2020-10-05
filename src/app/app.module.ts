@@ -9,6 +9,7 @@ import { StudentComponent } from './student/student.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { BindingPracticeComponent } from './binding-practice/binding-practice.component';
 import { SizerComponent } from './sizer/sizer.component';
+import { DirectivespracticeComponent } from './directivespractice/directivespractice.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SizerComponent } from './sizer/sizer.component';
       StudentComponent,
       PersonListComponent,
       BindingPracticeComponent,
-      SizerComponent
+      SizerComponent,
+      DirectivespracticeComponent
    ],
   imports: [
     BrowserModule,
