@@ -4,7 +4,10 @@
     <br>
     Name: {{per.name}}<br>
     Age: {{per.age}}
-
+    <br>
+    <button *ngIf="!isCount;else else_content" (click)="onCountClick()">Count Me In</button>
+    <br>
+    <ng-template #else_content>Button is Counted</ng-template>
 </div>
 
 

@@ -1,10 +1,10 @@
 <h1>Person List Component</h1>
 <p>Person List Records</p>
-
+<p>Slected Persons are: {{selectedPersons}}</p>
 
 <div *ngFor="let p of per">
-<app-person [per]="p"></app-person>
-
+<app-person [per]="p" (counterEvent)="personCountHandle($event);"></app-person>
+<br>
     <!-- ID : {{p.id}}
 Name : {{p.name}}
 Age : {{p.age}}  -->

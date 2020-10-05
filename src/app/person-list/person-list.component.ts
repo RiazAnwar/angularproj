@@ -9,6 +9,7 @@ import { Person } from '../person/Person';
 export class PersonListComponent implements OnInit {
 
   per: Person [] = [];
+  selectedPersons:number=0;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +17,8 @@ export class PersonListComponent implements OnInit {
     this.per.push(new Person(2, 'Bhai Asad' , 18));
     this.per.push(new Person(3, 'Bhai Suhaib' , 24));
   }
-
+  personCountHandle($event){
+    this.selectedPersons++;
+    //alert('Hello '+$event);
+  }
 }

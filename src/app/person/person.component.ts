@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Person } from './Person';
 
 @Component({
@@ -8,12 +8,17 @@ import { Person } from './Person';
 })
 export class PersonComponent implements OnInit {
 
+  isCount:boolean=false;
   @Input() per: Person;
+  @Output() counterEvent = new EventEmitter<number>();
   constructor() {
-  //this.per = new Person(1 , 'riaz', 23);
+  // this.per = new Person(1 , 'riaz', 23);
   }
 
   ngOnInit(): void {
   }
-
+  onCountClick() {
+    this.isCount = true;
+    this.counterEvent.emit(this.per.id);
+  }
 }
