@@ -1,0 +1,40 @@
+<h1>Binding Practice</h1>
+<h3>String Interpolation - One way</h3>
+itemImageUrl:{{itemImageUrl}}<br>
+
+itemImageUrl:{{itemImageUrl | uppercase}}<br>
+
+
+  testClasses:{{testClasses}}<br>
+  testClasses:{{ applyTestClass}}<br>
+  testClasses:{{applyRedStyle}}<br>
+
+  getColor(): {{getColor()}} <br>
+
+  testObj without Pipe :{{testObj}}<br>
+  testObj without Json Pipe :{{testObj |json}}<br>
+  <!-- Safe navigation Operation :{{testObj?.Name}} -->
+  <hr><hr>
+  <p [style.color]="getColor()">Function call</p>
+  <hr><hr>
+  <p [style.background-color]="'yellow'">Yellow color is apply</p>
+ 
+  <hr><hr>
+  <p [style.background-color]="'orange'">Function call</p>
+<hr><hr>
+<p [style.background-color]="'darkorchid'">
+  Quite something!
+</p>
+<hr><hr>
+<p [style.font-size.px]="isTrue? 40 :10">This style binding is set for true value</p>
+  <hr>
+<hr>
+  <a href="https://www.youtube.com/watch?v=4F5E6OHRq6E&t=13s">TechSDK</a><br>
+<img [src]="itemImageUrl" width="200" height="200"><br>
+<hr><hr>
+<img bind-src="itemImageUrl" width="200px" height="200px" >
+<hr><hr>
+<img src="{{itemImageUrl}}" width="200px" height="200px"><br>
+<hr><hr>
+<img src="itemImageUrl" width="200px" height="200px" >
+

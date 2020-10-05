@@ -1,0 +1,20 @@
+<h1>Student Component</h1>
+<!-- {{value}} -->
+<div>
+  <!-- <button (click)="onSaveClick()">Empty Button</button>
+    <br><br> -->
+    <button (click)="onSaveClick($event)">Event Button</button> 
+    <br>
+    CounterButton:{{clickCounter}}
+</div>
+
+<input [value]="login1" (input)="setText($event)"> {{login1}}
+<br><br>
+<input [value]="login2" (input)="login2=$event.target.value"> {{login2}}
+<br><br>
+<input [(ngModel)]='login3'/> {{login3}}
+<br><br>
+Login:<input #login/>
+<button (click)="show(login.value)" > Click Me</button><br>
+Login:<input ref-mylogin/>
+<button (click)="show(mylogin.value)" > Click Me</button>
