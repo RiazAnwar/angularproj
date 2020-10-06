@@ -30,5 +30,9 @@ export class DirectivespracticeComponent implements OnInit {
     else
     return {'background-color': 'yellow'};
   }
+  textColor()
+  {
+    return{'color':'orange'};
+  }
 
 }

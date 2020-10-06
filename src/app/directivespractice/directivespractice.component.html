@@ -1,6 +1,46 @@
-<p>directivespractice works!</p>
+<div [ngStyle]="textColor()"><h1>Directives Practice works!</h1></div>
 <hr>
-<div [ngStyle]="{'background-color' : 'red'}">ngStyle 1</div>
+<!-- <div [ngStyle]="{'background-color' : 'red'}">ngStyle 1</div>
 <div [ngStyle]="{'background-color' : getColor()}">ngStyle 2</div>
 <div [style.backgroundColor]="getColor()">NgStyle 3</div>
-<div [ngStyle]="getColorObj()">ngStyle 4</div>
+<div [ngStyle]="getColorObj()">ngStyle 4</div> -->
+
+<!-- <div [ngClass]="{'makered': this.testObj.id}">ngClass 1</div>
+<div [ngClass]="{'makered': this.testObj.price < 100, 'makegrey':this.testObj.price >= 100}">ngClass 2</div>
+<div [class.marked]="this.testObj.price >= 100">ngClass 3</div> -->
+
+<!-- <hr>
+<div *ngIf="(this.testObj.price >= 100)">Example 1</div>
+<div *ngIf="(this.testObj.price<100);else else_content">Example 2</div>
+<div *ngIf="(this.testObj.price >= 100) then if_content">Example 3</div>
+<div *ngIf="(this.testObj.price < 100) then if_content else else_content">Example 4</div>
+
+<ng-template #else_content><div>This is else content</div> </ng-template>
+<ng-template #if_content><div>This is if context</div></ng-template> -->
+
+<hr>
+<select [(ngModel)]="selectedCountry">
+    <option value="0"> --Select-- </option>
+    <option value="1">Pakistan</option>
+    <option value="2">Malaysia</option>
+    <option value="3">Turkey</option>
+    <option value="4">Saudia</option>
+</select>
+<div [ngSwitch]="selectedCountry">
+    <div *ngSwitchCase="1">qwe</div>
+    <div *ngSwitchCase="2">qwer</div>
+    <div *ngSwitchCase="3">qwert</div>
+    <div *ngSwitchCase="4">qwerty</div>
+    <div *ngSwitchDefault>Wrong Selection</div>
+</div>
+<hr>
+<div *ngFor="let p of persons" class="box">
+    id:{{p.id}}<br>
+    name:{{p.name}}
+</div>
+<hr>
+<div *ngFor="let p of persons; let i=index " class="box">
+    index:{{i}}<br>
+    id:{{p.id}}<br>
+    name:{{p.name}}
+</div>
