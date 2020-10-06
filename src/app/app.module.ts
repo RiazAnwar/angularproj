@@ -11,6 +11,8 @@ import { BindingPracticeComponent } from './binding-practice/binding-practice.co
 import { SizerComponent } from './sizer/sizer.component';
 import { DirectivespracticeComponent } from './directivespractice/directivespractice.component';
 import { LoginComponent } from './login/login.component';
+import { TestClass } from './person/Person';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,21 @@ import { LoginComponent } from './login/login.component';
       BindingPracticeComponent,
       SizerComponent,
       DirectivespracticeComponent,
-      LoginComponent
+      LoginComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide: 'MyToken',
+    useValue: 12345
+  }, {
+    provide: 'MyTest',
+    useClass: TestClass
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
