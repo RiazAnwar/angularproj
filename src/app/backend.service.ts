@@ -14,4 +14,11 @@ export class BackendService {
     pern.push(new Person(3, 'Bhai Suhaib' , 24));
     return pern;
   }
+  validateUser(username:string, password:string):boolean{
+    if (username == "admin" && password == "admin"){
+      return true;
+    }
+    else
+    return false;
+}
 }

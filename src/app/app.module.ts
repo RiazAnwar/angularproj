@@ -10,6 +10,7 @@ import { PersonListComponent } from './person-list/person-list.component';
 import { BindingPracticeComponent } from './binding-practice/binding-practice.component';
 import { SizerComponent } from './sizer/sizer.component';
 import { DirectivespracticeComponent } from './directivespractice/directivespractice.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DirectivespracticeComponent } from './directivespractice/directivesprac
       PersonListComponent,
       BindingPracticeComponent,
       SizerComponent,
-      DirectivespracticeComponent
+      DirectivespracticeComponent,
+      LoginComponent
    ],
   imports: [
     BrowserModule,
