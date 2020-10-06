@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../backend.service';
 import { Person } from '../person/Person';
 
 @Component({
@@ -9,13 +10,11 @@ import { Person } from '../person/Person';
 export class PersonListComponent implements OnInit {
 
   per: Person [] = [];
-  selectedPersons:number=0;
-  constructor() { }
+  selectedPersons: number = 0;
+  constructor(public backend: BackendService) { }
 
   ngOnInit(): void {
-    this.per.push(new Person(1, 'Bhai Waleed' , 23));
-    this.per.push(new Person(2, 'Bhai Asad' , 18));
-    this.per.push(new Person(3, 'Bhai Suhaib' , 24));
+   this.per=this.backend.getPersons();
   }
   personCountHandle($event){
     this.selectedPersons++;
