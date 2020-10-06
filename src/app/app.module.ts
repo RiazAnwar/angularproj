@@ -13,6 +13,8 @@ import { DirectivespracticeComponent } from './directivespractice/directivesprac
 import { LoginComponent } from './login/login.component';
 import { TestClass } from './person/Person';
 import { HomeComponent } from './home/home.component';
+import { MoviesComponent } from './movies/movies.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { HomeComponent } from './home/home.component';
       SizerComponent,
       DirectivespracticeComponent,
       LoginComponent,
-      HomeComponent
+      HomeComponent,
+      MoviesComponent
    ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [{
     provide: 'MyToken',
