@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { Person } from './person/Person';
+import { MoviesResponse, Person } from './person/Person';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -27,8 +27,8 @@ export class BackendService {
   }
  }
 
-getMovies(term: string): Observable<any>{
+getMovies(term: string): Observable<MoviesResponse>{
   let apiUrl = "http://www.omdbapi.com/?apikey=b2b65064&s=" + term;
-  return this.httpObj.get<any>(apiUrl);
+  return this.httpObj.get<MoviesResponse>(apiUrl);
 }
 }

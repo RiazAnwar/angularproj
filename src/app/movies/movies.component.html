@@ -1,4 +1,11 @@
 <p>movies works!</p>
-<!-- <div *ngFor="let o of Movies">
-    {{o.Title}}
-</div> -->
+<p>
+    Movies: <input type="text" [(ngModel)]= "term" />
+    <button (click)="searchMovies();">Search</button>
+</p>
+<div *ngFor="let o of Movies" class="Movies">
+    Title: <span>{{o.Title}}</span><br>
+    Year: <span>{{o.Year}}</span><br>
+    Type: <span>{{o.Type}}</span><br>
+    <img src="{{o.Poster}}" width="200px" height="200px" />
+</div>

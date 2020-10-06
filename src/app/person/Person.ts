@@ -9,3 +9,14 @@ export class TestClass{
         this.age=Math.random();
     }
 }
+export class MoviesResponse{
+    Search: Array<MovieResponse>;
+    totalResults: number;
+    Response: string;
+}
+export class MovieResponse{
+    Title: string;
+    Year: number;
+    Type: string;
+    Poster: string;
+}

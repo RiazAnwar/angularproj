@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../backend.service';
+import { MovieResponse, MoviesResponse } from '../person/Person';
 
 @Component({
   selector: 'app-movies',
@@ -8,12 +9,19 @@ import { BackendService } from '../backend.service';
 })
 export class MoviesComponent implements OnInit {
 
- // Movies: Object[] = [];
+  term:string = "batman";
+  Movies: MovieResponse[] = [];
   constructor(private MoviesService: BackendService) { }
 
   ngOnInit(): void {
- //   this.MoviesService.getMovies("superman").subscribe(m => {this.Movies = m.Search;});
-    this.MoviesService.getMovies("batman").subscribe(m => {console.log(m)});
+  //  this.MoviesService.getMovies("batman").subscribe(m => {console.log(m)});
 }
-
+// tslint:disable-next-line: typedef
+searchMovies(){
+  this.MoviesService.getMovies(this.term)
+  .subscribe(
+    m => {
+      this.Movies = m.Search;
+    });
+  }
 }
