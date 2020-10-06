@@ -7,25 +7,38 @@ import { BackendService } from '../backend.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string;
-  password:string;
-  message:string;
-  constructor(public login:BackendService) { }
+  username: string;
+  password: string;
+  message: string;
+  constructor(public login: BackendService) { }
 
   ngOnInit(): void {
 
   }
+  // tslint:disable-next-line: typedef
   onLoginClicked(){
-    var result=this.login.validateUser(this.username, this.password)
-    if(result) {
-     this.message = 'Valid User';
-    } 
-    else
-    {
-      this.message = 'Invalid User';
-    }
-
+    this.login.validateUser(this.username, this.password).subscribe(
+    m => {
+      if (m) {
+        this.message = 'Valid User';
+      }
+      else {
+         this.message = 'Invalid User';
+      }
+    });
   }
+
+  // onLoginClicked(){
+  //   var result=this.login.validateUser(this.username, this.password)
+  //   if(result) {
+  //    this.message = 'Valid User';
+  //   }
+  //   else
+  //   {
+  //     this.message = 'Invalid User';
+  //   }
+  // }
+
   // onLoginClicked(){
   //   if (this.username == "admin" && this.password == "admin"){
   //     this.message = 'Valid User';
@@ -34,7 +47,8 @@ export class LoginComponent implements OnInit {
   //     this.message = 'Invalid User';
   //   }
   // }
-  
+
+  // tslint:disable-next-line: typedef
   clear() {
     this.username = '';
     this.password = '';

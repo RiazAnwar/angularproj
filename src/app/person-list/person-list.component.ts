@@ -10,14 +10,24 @@ import { Person } from '../person/Person';
 export class PersonListComponent implements OnInit {
 
   per: Person [] = [];
-  selectedPersons: number = 0;
+  // selectedPersons = number =0;
+  selectedPersons = 0;
   constructor(public backend: BackendService) { }
 
-  ngOnInit(): void {
-   this.per=this.backend.getPersons();
+  // ngOnInit(): void {
+  //  this.per=this.backend.getPersons();
+  // }
+  ngOnInit(): void{
+    this.backend.getPersons().subscribe(
+      m => {
+        this.per = m;
+      }
+    );
   }
+
+  // tslint:disable-next-line: typedef
   personCountHandle($event){
     this.selectedPersons++;
-    //alert('Hello '+$event);
+    // alert('Hello '+$event);
   }
 }

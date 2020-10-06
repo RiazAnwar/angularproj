@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularproj';
   value = 'Welcome to Guru092' ;
-  sizerDefaultSize=17;
+  sizerDefaultSize = 17;
+  // tslint:disable-next-line: typedef
   sizeHandler($event){
-    alert($event)
+    alert($event);
   }
 }
