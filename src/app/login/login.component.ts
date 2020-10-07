@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BackendService } from '../backend.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   message: string;
-  constructor(public login: BackendService) { }
+  constructor(public login: BackendService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -20,7 +22,8 @@ export class LoginComponent implements OnInit {
     this.login.validateUser(this.username, this.password).subscribe(
     m => {
       if (m) {
-        this.message = 'Valid User';
+        this.router.navigate(['/home']);
+        // this.message = 'Valid User';
       }
       else {
          this.message = 'Invalid User';

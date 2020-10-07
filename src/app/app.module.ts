@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NavComponent } from './nav/nav.component';
       LoginComponent,
       HomeComponent,
       MoviesComponent,
-      NavComponent
+      NavComponent,
+      PageNotFoundComponent
    ],
   imports: [
     BrowserModule,
