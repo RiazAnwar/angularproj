@@ -15,6 +15,7 @@ import { TestClass } from './person/Person';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
       DirectivespracticeComponent,
       LoginComponent,
       HomeComponent,
-      MoviesComponent
+      MoviesComponent,
+      NavComponent
    ],
   imports: [
     BrowserModule,
