@@ -17,15 +17,22 @@ export class BackendService {
     return of(pern);
   }
 
-  validateUser(username: string , password: string): Observable<boolean>{
-    // tslint:disable-next-line: triple-equals
-    if (username == 'admin' && password == 'admin' ){
-      return of(true);
-    }
-    else{
-    return of(false);
-  }
- }
+//   validateUser(username: string , password: string): Observable<boolean>{
+//     // tslint:disable-next-line: triple-equals
+//     if (username == 'admin' && password == 'admin' ){
+//       return of(true);
+//     }
+//     else{
+//     return of(false);
+//   }
+//  }
+
+validateUser(username: string , password: string): Observable<boolean>{
+ const u = 'http://localhost:5000/api/auth/login';
+ this.httpObj.post<any> (u, {Login: username, Password : password}).subscribe(m => console.log(m));
+ return of(true);
+}
+
 
 getMovies(term: string): Observable<MoviesResponse>{
   let apiUrl = "http://www.omdbapi.com/?apikey=b2b65064&s=" + term;

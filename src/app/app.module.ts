@@ -17,6 +17,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DataBindComponent } from './data-bind/data-bind.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       HomeComponent,
       MoviesComponent,
       NavComponent,
-      PageNotFoundComponent
+      PageNotFoundComponent,
+      DataBindComponent
    ],
   imports: [
     BrowserModule,
